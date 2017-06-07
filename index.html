@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Meta data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Drawing to Pixels - MakerFaire SG 2017</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="public/css/global.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="tools">
+        <a id="submit" href="#">Submit</a>
+      </div>
+      <canvas id="canvas" width="600" height="400"></canvas>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/sketch.js/lib/sketch.min.js"></script>
+    <script src="public/js/utils.js"></script>
+    <script>
+      $(function() {
+          var $canvas = $('#canvas');
+
+          $.each(['#f00', '#ff0', '#0f0', '#0ff', '#00f', '#f0f', '#000', '#fff'], function() {
+              $('#tools').append(utils.sprintf(
+                  '<a href="#canvas" class="tool" data-color="%s" style="background-color:%s;"></a> ',
+                  this,
+                  this
+              ));
+          });
+
+          $.each([3, 5, 10, 15], function() {
+              $('#tools').append(utils.sprintf(
+                  '<a href="#canvas" class="tool" data-size="%s" style="background-color:#ccc;">%s</a> ',
+                  this,
+                  this
+              ));
+          });
+
+          $canvas.sketch();
+
+          $('#submit').click(function (e) {
+              e.preventDefault();
+
+              var imageDataUri = document.getElementById('canvas').toDataURL('image/png');
+              utils.sendDrawing(imageDataUri, function (isSuccess, statusCode, responseData) {
+                  console.log('Drawing sent');
+              });
+          });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "makerfairesg2017-drawing-to-pixels",
+  "version": "0.1.0",
+  "homepage": "https://github.com/zionsg/MakerFaireSG2017-DrawingToPixels",
+  "main": "index.html",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "sketch.js": "https://github.com/zionsg/sketch.js"
+  }
+}

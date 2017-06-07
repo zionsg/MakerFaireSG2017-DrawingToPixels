@@ -1,0 +1,6 @@
+<?php
+
+return [
+    'grid_width' => 3 * 9,
+    'grid_height' => 7,
+];
