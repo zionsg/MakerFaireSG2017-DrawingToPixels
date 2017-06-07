@@ -8,6 +8,6 @@ jquery@^3.2.1:
 
 "sketch.js@https://github.com/zionsg/sketch.js":
   version "0.1.0"
-  resolved "https://github.com/zionsg/sketch.js#9ae173df6d4ea38e1b031657f3bbda073679cb60"
+  resolved "https://github.com/zionsg/sketch.js#6637e3bba6e4492051eac2b73674cc75c5cb189d"
   dependencies:
     jquery "^3.2.1"
