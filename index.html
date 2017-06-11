@@ -52,7 +52,7 @@
 
               var imageDataUri = document.getElementById('canvas').toDataURL('image/png');
               utils.sendDrawing(imageDataUri, function (isSuccess, statusCode, responseData) {
-                  console.log('Drawing sent');
+                  alert('Drawing sent!');
               });
           });
       });
