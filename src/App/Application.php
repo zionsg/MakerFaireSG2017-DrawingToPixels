@@ -2,6 +2,24 @@
 
 namespace App;
 
+/**
+ * @api {post} /app Submit drawing information
+ *
+ * @apiParam {string} image_data_uri Data URI containing a representation of the image
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "grid": [
+ *         ["#ff0000", "#00ff00"],
+ *         ["#0000ff", "#ffffff"]
+ *       ],
+ *       "api_call": {
+ *         "code": 200,
+ *         "response": "OK"
+ *       }
+ *     }
+ * @see http://apidocjs.com
+ */
 class Application
 {
     protected $endpointUrl;
@@ -18,13 +36,7 @@ class Application
     /**
      * Parse image data uri, resize image and return grid information
      *
-     * @return string JSON-encoded string. Example for 2x2 image:
-     *     {
-     *         "grid": [
-     *             ["#ff0000", "#00ff00"],
-     *             ["#0000ff", "#ffffff"]
-     *         ]
-     *     }
+     * @return void JSON-encoded string will be echoed as per @apiSuccessExample
      */
     public function run()
     {
@@ -113,6 +125,13 @@ class Application
      */
     protected function call($url, array $data)
     {
+        if (! $url) {
+            return [
+                'code' => null,
+                'response' => null,
+            ];
+        }
+
         $headers = ['Content-Type: application/x-www-form-urlencoded; charset=utf-8'];
         $postDataStr = '';
         foreach ($data as $key => $value) {
