@@ -2,6 +2,7 @@
 
 ## Requirements
 - PHP >= 7.0
+- Apache >= 2.4
 - [Composer](https://getcomposer.org/)
 - [Yarn](https://yarnpkg.com/)
 
