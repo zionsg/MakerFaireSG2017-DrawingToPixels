@@ -131,7 +131,7 @@ class Application
         ]);
         $apiResponse = curl_exec($curlHandler);
         $curlInfo = curl_getinfo($curlHandler);
-        $apiCode = $curlInfo['http_code'] ?? null;
+        $apiCode = $curlInfo['http_code'];
         curl_close($curlHandler);
 
         return [
