@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'grid_width' => 3 * 9,
-    'grid_height' => 7,
+    'endpoint_url' => 'http://127.0.0.1:8080/',
+    'grid_width' => 9,
+    'grid_height' => 6,
 ];
