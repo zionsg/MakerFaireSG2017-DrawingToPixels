@@ -1,18 +1,25 @@
-#tools { margin-bottom: 10px; }
+.container {
+  padding: 10px;
+  text-align: center;
+}
+
+#tools {
+  margin-bottom: 20px;
+}
 
 #tools a {
   border: 1px solid black;
   display: inline-block;
+  font-family: monospace;
   font-weight: bold;
   height: 30px;
   line-height: 30px;
+  margin: 0 5px;
   padding: 0 10px;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
 }
-
-.tool { width: 10px; }
 
 #canvas {
   border: 1px solid black;

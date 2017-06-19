@@ -18,8 +18,9 @@
     <div class="container">
       <div id="tools">
         <a id="submit" href="#">Submit</a>
+        <a id="clear" href="#">Clear</a>
       </div>
-      <canvas id="canvas" width="600" height="400"></canvas>
+      <canvas id="canvas" width="900" height="600"></canvas>
     </div>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -27,31 +28,32 @@
     <script src="public/js/utils.js"></script>
     <script>
       $(function() {
+          var canvas = document.getElementById('canvas');
+          var $tools = $('#tools');
           var $canvas = $('#canvas');
+          var $sketch = $canvas.sketch();
+          var cleanCanvas = $canvas[0];
 
           $.each(['#f00', '#ff0', '#0f0', '#0ff', '#00f', '#f0f', '#000', '#fff'], function() {
-              $('#tools').append(utils.sprintf(
-                  '<a href="#canvas" class="tool" data-color="%s" style="background-color:%s;"></a> ',
+              $tools.append(utils.sprintf(
+                  '<a href="#canvas" class="tool" data-color="%s" style="background-color:%s;">&nbsp;</a> ',
                   this,
                   this
               ));
           });
 
           $.each([5, 10, 15, 20], function() {
-              $('#tools').append(utils.sprintf(
+              $tools.append(utils.sprintf(
                   '<a href="#canvas" class="tool" data-size="%s" style="background-color:#ccc;">%s</a> ',
                   this,
                   this
               ));
           });
 
-          $canvas.sketch();
-
           $('#submit').click(function (e) {
               e.preventDefault();
 
-              var canvas = document.getElementById('canvas'),
-                  imageDataUri = canvas.toDataURL('image/png');
+              var imageDataUri = canvas.toDataURL('image/png');
 
               utils.sendDrawing(imageDataUri, function (isSuccess, statusCode, responseData) {
                   alert('Drawing sent!');
@@ -60,6 +62,17 @@
                   var ctx = canvas.getContext('2d');
                   ctx.clearRect(0, 0, canvas.width, canvas.height);
               });
+          });
+
+          $('#clear').click(function (e) {
+              e.preventDefault();
+
+              // Clear array of actions kept by sketch.js else it will just redraw them after clearRect()
+              // https://stackoverflow.com/questions/13805424/unable-to-clear-canvas/#13807881
+              $sketch.sketch().actions = [];
+
+              var ctx = canvas.getContext('2d');
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
           });
       });
     </script>
