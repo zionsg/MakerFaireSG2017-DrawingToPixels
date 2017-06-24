@@ -1,4 +1,4 @@
-# MakerFaire SG 2017 - Drawing To Pixels
+# MakerFaire SG 2017 - Sketch Drawing To Pixels
 
 ## Requirements
 - PHP >= 7.0
