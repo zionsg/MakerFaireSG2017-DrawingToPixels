@@ -27,14 +27,14 @@
     <script src="node_modules/sketch.js/lib/sketch.min.js"></script>
     <script src="public/js/utils.js"></script>
     <script>
-      $(function() {
+      $(function () {
           var canvas = document.getElementById('canvas');
           var $tools = $('#tools');
           var $canvas = $('#canvas');
           var $sketch = $canvas.sketch();
           var cleanCanvas = $canvas[0];
 
-          $.each(['#f00', '#ff0', '#0f0', '#0ff', '#00f', '#f0f', '#000', '#fff'], function() {
+          $.each(['#f00', '#ff0', '#0f0', '#0ff', '#00f', '#f0f', '#000', '#fff'], function () {
               $tools.append(utils.sprintf(
                   '<a href="#canvas" class="tool" data-color="%s" style="background-color:%s;">&nbsp;</a> ',
                   this,
@@ -42,7 +42,7 @@
               ));
           });
 
-          $.each([5, 10, 15, 20], function() {
+          $.each([5, 10, 15, 20], function () {
               $tools.append(utils.sprintf(
                   '<a href="#canvas" class="tool" data-size="%s" style="background-color:#ccc;">%s</a> ',
                   this,
