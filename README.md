@@ -1,5 +1,7 @@
 # MakerFaire SG 2017 - Sketch Drawing To Pixels
 
+This was the precursor to the [actual drawing app](https://github.com/zionsg/MakerFaireSG2017-KonvaDrawingToPixels) which uses Konva instead.
+
 ## Requirements
 - PHP >= 7.0
 - Apache >= 2.4
