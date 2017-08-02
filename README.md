@@ -1,6 +1,6 @@
 # MakerFaire SG 2017 - Sketch Drawing To Pixels
 
-This was the precursor to the [actual drawing app](https://github.com/zionsg/MakerFaireSG2017-KonvaDrawingToPixels) which uses Konva instead.
+This was the precursor to the [actual drawing app](https://github.com/zionsg/MakerFaireSG2017-KonvaDrawingToPixels) which uses Konva instead. It allows users to do a freehand sketch in the browser and send it as a scaled down set of pixels to the NeoPixel LED matrix of the Interactive Wall.
 
 ## Requirements
 - PHP >= 7.0
