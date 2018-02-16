@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "homepage": "https://github.com/zionsg/MakerFaireSG2017-SketchDrawingToPixels",
   "main": "index.html",
+
   "dependencies": {
     "jquery": "^3.2.1",
-    "sketch.js": "https://github.com/zionsg/sketch.js"
+    "sketch.js": "https://github.com/zionsg/sketch.js#package-json"
   }
 }
